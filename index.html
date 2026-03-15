@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAXin.ai — Tu Vendedor Inteligente por WhatsApp | Vende 24/7 sin esfuerzo</title>
+    <meta name="description" content="MAXin.ai es tu vendedor virtual por WhatsApp con inteligencia artificial. Cobra, vende y fideliza clientes automáticamente. Primer mes GRATIS. Si no generas más ingresos, no pagas nada.">
+    <meta name="keywords" content="bot WhatsApp ventas, vendedor virtual, automatización ventas, chatbot ventas, WhatsApp Business, inteligencia artificial ventas">
+    <meta property="og:title" content="MAXin.ai — No dejes que ningún cliente se te escape">
+    <meta property="og:description" content="Tu vendedor inteligente por WhatsApp. Cobra, vende y fideliza clientes 24/7. Primer mes GRATIS.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maxin.ai">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="logo.png" alt="MAXin.ai" class="logo-img">
+                <span class="logo-text">MAXin<span class="logo-dot">.ai</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#features" class="nav-link">Características</a>
+                <a href="#seguridad" class="nav-link">Seguridad</a>
+                <a href="#como-funciona" class="nav-link">Cómo Funciona</a>
+                <a href="#pricing" class="nav-link">Precios</a>
+                <a href="#testimonios" class="nav-link">Testimonios</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#pricing" class="btn btn-ghost">Iniciar Gratis</a>
+                <a href="#contacto" class="btn btn-primary btn-glow">Prueba 30 días GRATIS</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#features" class="mobile-link">Características</a>
+        <a href="#seguridad" class="mobile-link">Seguridad</a>
+        <a href="#como-funciona" class="mobile-link">Cómo Funciona</a>
+        <a href="#pricing" class="mobile-link">Precios</a>
+        <a href="#testimonios" class="mobile-link">Testimonios</a>
+        <a href="#pricing" class="btn btn-primary btn-glow" style="width:100%;text-align:center;margin-top:1rem;">Prueba GRATIS</a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge animate-fade-up">
+                    <span class="badge-dot"></span>
+                    <span>🚀 Primer mes completamente GRATIS</span>
+                </div>
+                <h1 class="hero-title animate-fade-up delay-1">
+                    No dejes que <span class="gradient-text">ningún cliente</span> se te escape
+                </h1>
+                <p class="hero-subtitle animate-fade-up delay-2">
+                    Tu vendedor virtual por WhatsApp con <strong>Inteligencia Artificial</strong>. 
+                    Vende, cobra y fideliza clientes <strong>las 24 horas del día, los 7 días de la semana</strong> — sin que tú muevas un dedo.
+                </p>
+                <div class="hero-cta animate-fade-up delay-3">
+                    <a href="#pricing" class="btn btn-primary btn-large btn-glow">
+                        <span>🎯 Empezar GRATIS por 30 días</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#como-funciona" class="btn btn-outline btn-large">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        <span>Ver cómo funciona</span>
+                    </a>
+                </div>
+                <div class="hero-guarantee animate-fade-up delay-4">
+                    <div class="guarantee-icon">🛡️</div>
+                    <p><strong>Garantía MAXin:</strong> Si después de un mes no generas mayores ingresos a los que tienes, <strong>no te cobramos absolutamente nada</strong>.</p>
+                </div>
+            </div>
+            <div class="hero-visual animate-fade-up delay-2">
+                <div class="phone-mockup">
+                    <div class="phone-frame">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="chat-header-wa">
+                                <div class="chat-avatar">🤖</div>
+                                <div>
+                                    <div class="chat-name" id="chatBizName">MAXin Bot</div>
+                                    <div class="chat-status" id="chatStatus">en línea</div>
+                                </div>
+                                <div class="chat-scenario-badge" id="scenarioBadge">🇵🇪 Botica — Perú</div>
+                            </div>
+                            <div class="chat-messages" id="chatMessages">
+                                <!-- Messages injected by JS -->
+                            </div>
+                            <div class="typing-indicator" id="typingIndicator" style="display:none;">
+                                <div class="typing-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <span class="typing-text">escribiendo...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-card card-1">
+                    <div class="fc-icon">💰</div>
+                    <div class="fc-text">
+                        <span class="fc-label">Ventas Hoy</span>
+                        <span class="fc-value" id="fcVentas">S/ 2,340</span>
+                    </div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="fc-icon">👥</div>
+                    <div class="fc-text">
+                        <span class="fc-label">Clientes</span>
+                        <span class="fc-value">+47 nuevos</span>
+                    </div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="fc-icon">📈</div>
+                    <div class="fc-text">
+                        <span class="fc-label">Crecimiento</span>
+                        <span class="fc-value">+156%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number" data-target="2">0</span><span class="stat-suffix"></span>
+                <span class="stat-label">Negocios confían en nosotros</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="1">0</span><span class="stat-suffix">/seg</span>
+                <span class="stat-label">Ventas en aumento</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="98">0</span><span class="stat-suffix">%</span>
+                <span class="stat-label">Clientes satisfechos</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="24">0</span><span class="stat-suffix">/7</span>
+                <span class="stat-label">Atención sin descanso</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAIN POINTS -->
+    <section class="pain-section">
+        <div class="container">
+            <div class="pain-header">
+                <h2 class="section-title">¿Te suena <span class="gradient-text">familiar</span>?</h2>
+                <p class="section-subtitle">Estos problemas le cuestan miles a tu negocio cada mes</p>
+            </div>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <div class="pain-emoji">😓</div>
+                    <h3>Clientes que escriben y nadie responde</h3>
+                    <p>Mientras duermes, almuerzas o atiendes a otro cliente, <strong>pierdes ventas</strong> porque nadie les contesta a tiempo.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-emoji">💸</div>
+                    <h3>Estafas por WhatsApp</h3>
+                    <p>"Me mandaron el comprobante falso" — ¿Te ha pasado? <strong>Sin sistema seguro, no hay forma de verificar</strong> pagos reales.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-emoji">📝</div>
+                    <h3>Pedidos perdidos y mal anotados</h3>
+                    <p>Anotas en papel, en WhatsApp, en la cabeza... y al final <strong>se pierden pedidos</strong> y los clientes se van molestos.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-emoji">😤</div>
+                    <h3>No sabes qué producto se vende más</h3>
+                    <p>Sin datos reales, <strong>compras de más lo que no se vende</strong> y te quedas sin lo que sí se vende. Pierdes dinero dos veces.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-emoji">🕐</div>
+                    <h3>Trabajas 16 horas al día</h3>
+                    <p>Respondes mensajes, anotas pedidos, cobras, verificas... <strong>todo tú solo</strong>. ¿Y tu vida personal?</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-emoji">📉</div>
+                    <h3>Clientes que compran una vez y desaparecen</h3>
+                    <p>No tienes forma de <strong>fidelizar</strong>. Se van y nunca vuelven porque no les das seguimiento.</p>
+                </div>
+            </div>
+            <div class="pain-solution">
+                <div class="solution-arrow">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                </div>
+                <h3 class="gradient-text">MAXin.ai resuelve TODO esto por ti</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">✨ Características</div>
+                <h2 class="section-title">Un vendedor que <span class="gradient-text">nunca descansa</span></h2>
+                <p class="section-subtitle">MAXin hace todo lo que un vendedor humano haría — pero más rápido, sin errores y sin pedir vacaciones</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card feature-main">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">🤖</div>
+                    </div>
+                    <h3>Vendedor IA por WhatsApp</h3>
+                    <p>Un bot inteligente que atiende a tus clientes como si fueras tú. Conoce tu menú, tus precios, tu estilo. <strong>Vende las 24 horas sin parar.</strong></p>
+                    <ul class="feature-list">
+                        <li>Responde en segundos</li>
+                        <li>Personalidad adaptable a tu negocio</li>
+                        <li>Entiende audios y texto</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">💳</div>
+                    </div>
+                    <h3>Cobra automáticamente</h3>
+                    <p>El bot calcula totales, genera boletas y <strong>recibe comprobantes de pago</strong>. Todo registrado y seguro.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">📊</div>
+                    </div>
+                    <h3>Dashboard de Negocio</h3>
+                    <p>Panel en tiempo real con <strong>ventas del día, productos más vendidos, clientes frecuentes</strong> y reportes automáticos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">🧠</div>
+                    </div>
+                    <h3>Inteligencia de Productos</h3>
+                    <p>Detecta qué productos <strong>se venden más y cuáles están por vencer</strong>. Toma decisiones inteligentes con datos reales.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">⭐</div>
+                    </div>
+                    <h3>Clientes Frecuentes VIP</h3>
+                    <p>Identifica automáticamente a tus mejores clientes por nombre o número. <strong>Les ofrece precios especiales</strong> que tú configuras.</p>
+                    <ul class="feature-list">
+                        <li>Precio normal y precio mínimo (clientes VIP)</li>
+                        <li>Panel de gestión de clientes frecuentes</li>
+                        <li>El bot reconoce y premia su lealtad</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">📲</div>
+                    </div>
+                    <h3>Seguimiento Automático</h3>
+                    <p>MAXin contacta automáticamente a clientes que <strong>ya pagaron</strong> cada semana o 15 días con recomendaciones personalizadas de productos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">🔒</div>
+                    </div>
+                    <h3>Anti-Estafas Garantizado</h3>
+                    <p>Cada chat con comprobante de pago queda guardado en un <strong>archivo ineditable</strong>. Auditoría completa, cero estafas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">💰</div>
+                    </div>
+                    <h3>Precios Inteligentes</h3>
+                    <p>Configura <strong>precio normal y precio mínimo</strong> por producto. El bot ofrece precio especial automáticamente a los clientes que tú elijas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECURITY SECTION -->
+    <section id="seguridad" class="security-section">
+        <div class="container">
+            <div class="security-content">
+                <div class="security-text">
+                    <div class="section-badge">🔐 Seguridad</div>
+                    <h2 class="section-title">¿Harto de las <span class="gradient-text-red">estafas por WhatsApp</span>?</h2>
+                    <h3 class="security-subtitle">Eso aquí NO pasa. Garantizado.</h3>
+                    <p class="security-desc">MAXin cuenta con un sistema de seguridad anti-estafas que <strong>ningún otro bot del mercado tiene</strong>:</p>
+                    <div class="security-features">
+                        <div class="sec-feature">
+                            <div class="sec-icon">📸</div>
+                            <div>
+                                <h4>Registro de Comprobantes</h4>
+                                <p>Cuando el cliente envía su foto de pago, todo el chat se guarda automáticamente en un <strong>archivo ineditable</strong>.</p>
+                            </div>
+                        </div>
+                        <div class="sec-feature">
+                            <div class="sec-icon">🔗</div>
+                            <div>
+                                <h4>Integridad SHA-256</h4>
+                                <p>Cada registro tiene un hash criptográfico. Si alguien intenta alterar un registro, <strong>el sistema lo detecta inmediatamente</strong>.</p>
+                            </div>
+                        </div>
+                        <div class="sec-feature">
+                            <div class="sec-icon">📋</div>
+                            <div>
+                                <h4>Auditoría Completa</h4>
+                                <p>Historial de conversaciones inmutable: quién dijo qué, cuándo y cuánto fue el pago. <strong>Evidencia legal real</strong>.</p>
+                            </div>
+                        </div>
+                        <div class="sec-feature">
+                            <div class="sec-icon">🛡️</div>
+                            <div>
+                                <h4>Control Total del Dueño</h4>
+                                <p>Tú verificas cada comprobante desde tu dashboard. <strong>Nada se confirma sin tu aprobación</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="security-visual">
+                    <div class="security-shield">
+                        <div class="shield-ring ring-1"></div>
+                        <div class="shield-ring ring-2"></div>
+                        <div class="shield-ring ring-3"></div>
+                        <div class="shield-center">
+                            <span>🔒</span>
+                            <span class="shield-text">PROTEGIDO</span>
+                        </div>
+                    </div>
+                    <div class="sec-stat-card stat-card-1">
+                        <span class="sec-stat-value">0</span>
+                        <span class="sec-stat-label">Estafas con MAXin</span>
+                    </div>
+                    <div class="sec-stat-card stat-card-2">
+                        <span class="sec-stat-value">100%</span>
+                        <span class="sec-stat-label">Trazabilidad</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="como-funciona" class="how-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">⚡ Super Fácil</div>
+                <h2 class="section-title">Configura tu vendedor en <span class="gradient-text">3 sencillos pasos</span></h2>
+                <p class="section-subtitle">En menos de 10 minutos tienes tu vendedor IA funcionando. No necesitas saber nada de tecnología.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-visual">
+                        <div class="step-phone">
+                            <div class="step-screen">
+                                <div class="qr-mock">
+                                    <div class="qr-grid">
+                                        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                                        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                                        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                                        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                                        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                                        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                                        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Escanea el QR</h3>
+                    <p>Conecta tu WhatsApp escaneando un código QR. Así de simple, como WhatsApp Web.</p>
+                </div>
+                <div class="step-connector">
+                    <svg width="60" height="24" viewBox="0 0 60 24"><path d="M0 12h50M44 6l6 6-6 6" fill="none" stroke="url(#grad1)" stroke-width="2"/><defs><linearGradient id="grad1"><stop offset="0%" stop-color="#00D4FF"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs></svg>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-visual">
+                        <div class="config-mock">
+                            <div class="config-item">
+                                <span class="config-label">🏪 Nombre</span>
+                                <span class="config-value">Mi Restaurante</span>
+                            </div>
+                            <div class="config-item">
+                                <span class="config-label">🍔 Productos</span>
+                                <span class="config-value">12 items</span>
+                            </div>
+                            <div class="config-item">
+                                <span class="config-label">💰 Precios</span>
+                                <span class="config-value">Configurados ✅</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Configura tu negocio</h3>
+                    <p>Agrega tus productos, precios y personaliza tu bot. El asistente te guía paso a paso.</p>
+                </div>
+                <div class="step-connector">
+                    <svg width="60" height="24" viewBox="0 0 60 24"><path d="M0 12h50M44 6l6 6-6 6" fill="none" stroke="url(#grad2)" stroke-width="2"/><defs><linearGradient id="grad2"><stop offset="0%" stop-color="#00D4FF"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs></svg>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-visual">
+                        <div class="rocket-launch">
+                            <div class="rocket">🚀</div>
+                            <div class="launch-trail"></div>
+                            <div class="launch-text">¡EN VIVO!</div>
+                        </div>
+                    </div>
+                    <h3>¡Listo! Ya estás vendiendo</h3>
+                    <p>Tu bot empieza a atender clientes inmediatamente. Tú cruzas los brazos y ves las ventas crecer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DASHBOARD PREVIEW -->
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">📊 Panel de Control</div>
+                <h2 class="section-title">Ten <span class="gradient-text">control total</span> de tu negocio</h2>
+                <p class="section-subtitle">Un dashboard intuitivo que te muestra TODO lo que necesitas saber sobre tu negocio en tiempo real</p>
+            </div>
+            <div class="dashboard-preview">
+                <div class="dash-mockup">
+                    <div class="dash-top-bar">
+                        <div class="dash-dots"><span></span><span></span><span></span></div>
+                        <div class="dash-url">maxin.ai/dashboard</div>
+                    </div>
+                    <div class="dash-content">
+                        <div class="dash-sidebar">
+                            <div class="dash-menu-item active">📊 Dashboard</div>
+                            <div class="dash-menu-item">📦 Pedidos</div>
+                            <div class="dash-menu-item">🛍️ Productos</div>
+                            <div class="dash-menu-item">👥 Clientes</div>
+                            <div class="dash-menu-item">💰 Precios VIP</div>
+                            <div class="dash-menu-item">📈 Reportes</div>
+                            <div class="dash-menu-item">⚙️ Config</div>
+                        </div>
+                        <div class="dash-main">
+                            <div class="dash-stats-row">
+                                <div class="dash-stat-card">
+                                    <span class="dsc-label">Ventas Hoy</span>
+                                    <span class="dsc-value">S/ 4,280</span>
+                                    <span class="dsc-change positive">+23%</span>
+                                </div>
+                                <div class="dash-stat-card">
+                                    <span class="dsc-label">Pedidos</span>
+                                    <span class="dsc-value">47</span>
+                                    <span class="dsc-change positive">+12</span>
+                                </div>
+                                <div class="dash-stat-card">
+                                    <span class="dsc-label">Clientes Nuevos</span>
+                                    <span class="dsc-value">18</span>
+                                    <span class="dsc-change positive">+8</span>
+                                </div>
+                                <div class="dash-stat-card">
+                                    <span class="dsc-label">Satisfacción</span>
+                                    <span class="dsc-value">98%</span>
+                                    <span class="dsc-change positive">⭐</span>
+                                </div>
+                            </div>
+                            <div class="dash-charts-row">
+                                <div class="dash-chart">
+                                    <div class="chart-title">Productos más vendidos</div>
+                                    <div class="chart-bars">
+                                        <div class="chart-bar-row">
+                                            <span>Ceviche</span>
+                                            <div class="chart-bar"><div class="bar-fill" style="width:92%"></div></div>
+                                            <span>92</span>
+                                        </div>
+                                        <div class="chart-bar-row">
+                                            <span>Lomo</span>
+                                            <div class="chart-bar"><div class="bar-fill" style="width:78%"></div></div>
+                                            <span>78</span>
+                                        </div>
+                                        <div class="chart-bar-row">
+                                            <span>Pollo</span>
+                                            <div class="chart-bar"><div class="bar-fill" style="width:65%"></div></div>
+                                            <span>65</span>
+                                        </div>
+                                        <div class="chart-bar-row">
+                                            <span>Arroz</span>
+                                            <div class="chart-bar"><div class="bar-fill" style="width:45%"></div></div>
+                                            <span>45</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dash-chart">
+                                    <div class="chart-title">Clientes VIP 🌟</div>
+                                    <div class="vip-list">
+                                        <div class="vip-item">
+                                            <div class="vip-avatar">MG</div>
+                                            <div class="vip-info">
+                                                <span class="vip-name">María García</span>
+                                                <span class="vip-detail">15 pedidos • Precio VIP activo</span>
+                                            </div>
+                                            <span class="vip-badge">⭐ VIP</span>
+                                        </div>
+                                        <div class="vip-item">
+                                            <div class="vip-avatar">JL</div>
+                                            <div class="vip-info">
+                                                <span class="vip-name">José López</span>
+                                                <span class="vip-detail">12 pedidos • Precio VIP activo</span>
+                                            </div>
+                                            <span class="vip-badge">⭐ VIP</span>
+                                        </div>
+                                        <div class="vip-item">
+                                            <div class="vip-avatar">AR</div>
+                                            <div class="vip-info">
+                                                <span class="vip-name">Ana Ruiz</span>
+                                                <span class="vip-detail">9 pedidos • Regular</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">💎 Precios</div>
+                <h2 class="section-title">Invierte menos de lo que pagas por un <span class="gradient-text">cafecito diario</span></h2>
+                <p class="section-subtitle">Y obtén un vendedor que trabaja 24/7 sin quejarse, sin pedir aumento y sin llegar tarde</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-badge-free">🎁 Primer mes GRATIS</div>
+                    <h3 class="pricing-name">Emprendedor</h3>
+                    <div class="pricing-price">
+                        <span class="price-currency">S/</span>
+                        <span class="price-amount">30</span>
+                        <span class="price-period">/mes</span>
+                    </div>
+                    <p class="pricing-desc">Perfecto para negocios que están empezando</p>
+                    <ul class="pricing-features">
+                        <li><span class="check">✅</span> Bot vendedor IA 24/7</li>
+                        <li><span class="check">✅</span> Hasta 50 productos</li>
+                        <li><span class="check">✅</span> Dashboard de ventas</li>
+                        <li><span class="check">✅</span> Sistema anti-estafas</li>
+                        <li><span class="check">✅</span> Historial de clientes</li>
+                        <li><span class="check">✅</span> Soporte por WhatsApp</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-outline btn-block">Empezar GRATIS</a>
+                </div>
+                <div class="pricing-card pricing-popular">
+                    <div class="popular-badge">🔥 MÁS POPULAR</div>
+                    <div class="pricing-badge-free">🎁 Primer mes GRATIS</div>
+                    <h3 class="pricing-name">Negocio Pro</h3>
+                    <div class="pricing-price">
+                        <span class="price-currency">S/</span>
+                        <span class="price-amount">60</span>
+                        <span class="price-period">/mes</span>
+                    </div>
+                    <p class="pricing-desc">Para negocios que quieren crecer en serio</p>
+                    <ul class="pricing-features">
+                        <li><span class="check">✅</span> Todo lo del plan Emprendedor</li>
+                        <li><span class="check">✅</span> Productos ilimitados</li>
+                        <li><span class="check">✅</span> Clientes VIP con precios especiales</li>
+                        <li><span class="check">✅</span> Seguimiento automático semanal</li>
+                        <li><span class="check">✅</span> Inteligencia de productos</li>
+                        <li><span class="check">✅</span> Alertas de vencimiento</li>
+                        <li><span class="check">✅</span> Reportes avanzados (Excel)</li>
+                        <li><span class="check">✅</span> Soporte prioritario</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-primary btn-block btn-glow">Empezar GRATIS</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-badge-free">🎁 Primer mes GRATIS</div>
+                    <h3 class="pricing-name">Empresa</h3>
+                    <div class="pricing-price">
+                        <span class="price-currency">S/</span>
+                        <span class="price-amount">100</span>
+                        <span class="price-period">/mes</span>
+                    </div>
+                    <p class="pricing-desc">Para negocios con alto volumen de ventas</p>
+                    <ul class="pricing-features">
+                        <li><span class="check">✅</span> Todo lo del plan Pro</li>
+                        <li><span class="check">✅</span> Multi-sucursal</li>
+                        <li><span class="check">✅</span> API de integración</li>
+                        <li><span class="check">✅</span> Personalización avanzada del bot</li>
+                        <li><span class="check">✅</span> Dashboard en TV/Tablet (cocina)</li>
+                        <li><span class="check">✅</span> Onboarding dedicado</li>
+                        <li><span class="check">✅</span> Soporte 24/7 con agente humano</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-outline btn-block">Contactar Ventas</a>
+                </div>
+            </div>
+            <div class="pricing-guarantee">
+                <div class="guarantee-box">
+                    <div class="guarantee-shield">🛡️</div>
+                    <div class="guarantee-content">
+                        <h3>Garantía de Resultados MAXin</h3>
+                        <p>Si después de usar MAXin durante <strong>un mes completo</strong> no generas <strong>mayores ingresos</strong> a los que tenías antes, <strong>no te cobramos absolutamente nada</strong>. Cero riesgo para ti. Todo el riesgo lo asumimos nosotros.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonios" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">💬 Testimonios</div>
+                <h2 class="section-title">Lo que dicen nuestros <span class="gradient-text">clientes</span></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Antes perdía como 20 clientes al día porque no podía responder a tiempo. Con MAXin, <strong>mis ventas subieron un 180%</strong> el primer mes. Es como tener un empleado que nunca se cansa."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CR</div>
+                        <div>
+                            <span class="author-name">Carlos Rodríguez</span>
+                            <span class="author-business">Cevichería Don Carlos — Lima</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Lo mejor es el <strong>sistema anti-estafas</strong>. Antes me mandaban comprobantes falsos y perdía mercadería. Ahora todo queda registrado y verificado. <strong>Más tranquilidad imposible.</strong>"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LM</div>
+                        <div>
+                            <span class="author-name">Lucía Mendoza</span>
+                            <span class="author-business">Farmacia Salud Total — Arequipa</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Mis clientes frecuentes aman que el bot ya les conoce y les ofrece su precio especial. <strong>La fidelización automática es magia</strong>. Vuelven cada semana sin que yo haga nada."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JP</div>
+                        <div>
+                            <span class="author-name">Javier Paredes</span>
+                            <span class="author-business">Bodega JP — Trujillo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="contacto" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">¿Listo para dejar de perder clientes?</h2>
+                <p class="cta-subtitle">Empieza hoy con <strong>30 días GRATIS</strong>. Sin tarjeta de crédito. Sin compromisos. Sin letra chica.</p>
+                
+                <!-- Hidden iframe for Google Forms submission -->
+                <iframe name="gformIframe" id="gformIframe" style="display:none;"></iframe>
+                
+                <div class="cta-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="ctaName">👤 Tu nombre</label>
+                            <input type="text" id="ctaName" placeholder="Ej: Carlos Rodríguez" class="form-input" autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="ctaPhone">📱 Tu WhatsApp</label>
+                            <input type="tel" id="ctaPhone" placeholder="Ej: +51 999 888 777" class="form-input" autocomplete="tel">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="ctaBusiness">🏪 Tipo de negocio</label>
+                            <select id="ctaBusiness" class="form-input form-select">
+                                <option value="" disabled selected>Selecciona tu tipo de negocio</option>
+                                <option value="Restaurante / Comida">Restaurante / Comida</option>
+                                <option value="Farmacia / Botica">Farmacia / Botica</option>
+                                <option value="Tienda / Bodega">Tienda / Bodega</option>
+                                <option value="Ferretería">Ferretería</option>
+                                <option value="Verdulería / Frutería">Verdulería / Frutería</option>
+                                <option value="Otro">Otro negocio</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="ctaCountry">🌎 País</label>
+                            <select id="ctaCountry" class="form-input form-select">
+                                <option value="" disabled selected>¿Desde dónde nos contactas?</option>
+                                <option value="Perú">🇵🇪 Perú</option>
+                                <option value="Argentina">🇦🇷 Argentina</option>
+                                <option value="Otro">🌎 Otro país</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="ctaSubmit" class="btn btn-primary btn-large btn-glow btn-block" onclick="submitForm()">
+                        🚀 Quiero mi vendedor IA GRATIS por 30 días
+                    </button>
+                    <p class="form-note">🔒 No spam. Te contactamos por WhatsApp para configurar tu bot en menos de 10 minutos.</p>
+                </div>
+                <div class="cta-trust">
+                    <div class="trust-item">✅ Primer mes GRATIS</div>
+                    <div class="trust-item">✅ Sin tarjeta de crédito</div>
+                    <div class="trust-item">✅ Garantía de resultados</div>
+                    <div class="trust-item">✅ Cancela cuando quieras</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="MAXin.ai" class="logo-img">
+                        <span class="logo-text">MAXin<span class="logo-dot">.ai</span></span>
+                    </div>
+                    <p class="footer-desc">Tu vendedor inteligente por WhatsApp. Vende más, trabaja menos, vive mejor.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-link" aria-label="TikTok">🎵</a>
+                        <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Producto</h4>
+                    <a href="#features">Características</a>
+                    <a href="#pricing">Precios</a>
+                    <a href="#como-funciona">Cómo funciona</a>
+                    <a href="#seguridad">Seguridad</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Empresa</h4>
+                    <a href="#">Sobre nosotros</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Casos de éxito</a>
+                    <a href="#">Partners</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="#">Términos de servicio</a>
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Política de cookies</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MAXin.ai — Todos los derechos reservados</p>
+                <p>Hecho con ❤️ para microempresarios de Latinoamérica</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <span class="toast-icon">✅</span>
+            <span class="toast-text">¡Genial! Te contactaremos pronto por WhatsApp</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
