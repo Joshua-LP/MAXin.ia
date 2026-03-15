@@ -8,8 +8,8 @@ const GFORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScUhPaQgBKPd-Cif_3ke
 const GFORM_FIELDS = {
     name:     'entry.1166861709',
     phone:    'entry.660977506',
-    business: 'entry.801552343',
-    country:  'entry.447701664'
+    business: 'entry.447701664', // Cambiado: Este ID es realmente para Tipo de Negocio (Select)
+    country:  'entry.801552343'  // Cambiado: Enviamos el País a este input adicional
 };
 
 // ── Chat Scenarios: Botica Perú + Restaurante Argentina + Bodega ──
@@ -290,14 +290,6 @@ function submitForm() {
         btn.innerHTML = '🎉 ¡Solicitud Enviada!';
         btn.style.background = 'linear-gradient(135deg, #00E676, #00C853)';
         btn.style.opacity = '1';
-
-        // Open WhatsApp with pre-filled message
-        const msg = encodeURIComponent(
-            `¡Hola! Soy ${name} de ${country}. Quiero probar MAXin.ai GRATIS para mi ${business}. Mi WhatsApp es ${phone}`
-        );
-        setTimeout(() => {
-            window.open(`https://wa.me/51999999999?text=${msg}`, '_blank');
-        }, 2000);
 
         // Reset form after 5s
         setTimeout(() => {
