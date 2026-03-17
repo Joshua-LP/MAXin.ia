@@ -158,6 +158,71 @@ body {
 .hero-guarantee p { font-size: 0.88rem; color: var(--text-muted); }
 .hero-guarantee strong { color: var(--green); }
 .guarantee-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+/* -- Brand Animation (Slot Machine) -- */
+.hero-brand {
+    position: relative;
+    min-height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    letter-spacing: -0.02em;
+}
+.brand-spin {
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+    transition: opacity 0.5s ease;
+}
+.brand-spin.fade-out { opacity: 0; pointer-events: none; }
+.brand-max { color: #fff; }
+.brand-in  { color: var(--primary); }
+.brand-slot-window {
+    display: inline-block;
+    overflow: hidden;
+    height: 1.15em;
+    min-width: 6em;
+    vertical-align: middle;
+    position: relative;
+}
+.brand-slot-strip {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.brand-slot-word {
+    display: block;
+    height: 1.15em;
+    line-height: 1.15em;
+    color: var(--accent);
+    white-space: nowrap;
+    padding-left: 0.25em;
+}
+.brand-final {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+.brand-final.visible { opacity: 1; }
+.bf-bracket {
+    color: var(--primary);
+    font-size: 0.85em;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.bf-lt { transform: translateX(-8px); }
+.bf-gt { transform: translateX(8px); }
+.bf-lt.show, .bf-gt.show { opacity: 1; transform: translateX(0); }
+.bf-name { color: #fff; }
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    MAXin.ai â€” Part 2: Phone Mockup, Stats, Pain Section
    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */

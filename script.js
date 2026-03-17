@@ -459,3 +459,81 @@ async function initGeoPricing() {
 }
 
 initGeoPricing();
+
+// ══════════════════════════════════════════════════════════════
+// Brand Animation — Slot Machine con <MAXin> final
+// ══════════════════════════════════════════════════════════════
+
+const BRAND_WORDS = [
+    'Peru Para Ti',
+    'Spadavecha',
+    'Tu Botiquita',
+    'El Rinconcito',
+    'La Bodeguita',
+    'SaludMax',
+    'Don Pepe',
+    'Tu Tienda',
+    'La Favorita',
+    'Mi Negocio'
+];
+
+function initBrandAnimation() {
+    const strip = document.getElementById('brandStrip');
+    const spin = document.getElementById('brandSpin');
+    const final = document.getElementById('brandFinal');
+    if (!strip || !spin || !final) return;
+
+    // Build word strip (repeat for loop effect)
+    const allWords = [...BRAND_WORDS, ...BRAND_WORDS, ...BRAND_WORDS];
+    allWords.forEach(w => {
+        const el = document.createElement('span');
+        el.className = 'brand-slot-word';
+        el.textContent = w;
+        strip.appendChild(el);
+    });
+
+    let wordHeight = 0;
+    let currentIndex = 0;
+    let totalShown = 0;
+    const totalToShow = 18;
+    let delay = 100;
+
+    function getWordHeight() {
+        const first = strip.querySelector('.brand-slot-word');
+        return first ? first.offsetHeight : 50;
+    }
+
+    function spinNext() {
+        if (!wordHeight) wordHeight = getWordHeight();
+        currentIndex++;
+        totalShown++;
+        strip.style.transform = `translateY(-${currentIndex * wordHeight}px)`;
+
+        if (totalShown >= totalToShow - 5) {
+            delay += 40; // Slow down near end
+        }
+
+        if (totalShown < totalToShow) {
+            setTimeout(spinNext, delay);
+        } else {
+            setTimeout(showFinal, 500);
+        }
+    }
+
+    function showFinal() {
+        spin.classList.add('fade-out');
+        const lt = final.querySelector('.bf-lt');
+        const gt = final.querySelector('.bf-gt');
+
+        setTimeout(() => {
+            final.classList.add('visible');
+            setTimeout(() => lt && lt.classList.add('show'), 150);
+            setTimeout(() => gt && gt.classList.add('show'), 400);
+        }, 350);
+    }
+
+    // Start after page load
+    setTimeout(spinNext, 800);
+}
+
+document.addEventListener('DOMContentLoaded', initBrandAnimation);
