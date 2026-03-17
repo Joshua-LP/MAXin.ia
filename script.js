@@ -364,43 +364,23 @@ console.log('🚀 MAXin.ai Landing v3 loaded — Google Forms integrated');
 
 const PLAN_USD = [20, 30, 50]; // Básico · Presencia · Publicidad
 
-async function fetchPENRate() {
-    // Fuente primaria: frankfurter.app (datos BCE, sin API key)
-    try {
-        const res = await fetch('https://api.frankfurter.app/latest?from=USD&to=PEN',
-            { signal: AbortSignal.timeout(7000) });
-        const data = await res.json();
-        if (data && data.rates && data.rates.PEN) return Number(data.rates.PEN);
-    } catch (_) {}
-    // Fallback: open.er-api.com
-    try {
-        const res = await fetch('https://open.er-api.com/v6/latest/USD',
-            { signal: AbortSignal.timeout(7000) });
-        const data = await res.json();
-        if (data && data.rates && data.rates.PEN) return Number(data.rates.PEN);
-    } catch (_) {}
-    return null;
-}
+const PLAN_PEN = [30, 50, 100]; // Básico · Presencia · Publicidad (fijo en soles)
 
-function applyPENPricing(penRate) {
-    const rateRounded = penRate.toFixed(2);
-    PLAN_USD.forEach((usd, i) => {
-        const pen = Math.round((usd * penRate) / 10) * 10;
-        const penFormatted = new Intl.NumberFormat('es-PE').format(pen);
-
+function applyPENPricing() {
+    PLAN_PEN.forEach((pen, i) => {
         const curEl  = document.getElementById('cur-'  + i);
         const amtEl  = document.getElementById('amt-'  + i);
         const exchEl = document.getElementById('exch-' + i);
 
         if (curEl)  curEl.textContent  = 'S/';
-        if (amtEl)  amtEl.textContent  = penFormatted;
-        if (exchEl) exchEl.textContent = '≈ USD ' + usd + ' | Tipo de cambio S/' + rateRounded;
+        if (amtEl)  amtEl.textContent  = pen;
+        if (exchEl) exchEl.textContent = '';
     });
 
     const regionEl   = document.getElementById('pricingRegion');
     const regionText = document.getElementById('pricingRegionText');
     if (regionEl && regionText) {
-        regionText.textContent = '🇵🇪 Precios en soles peruanos — Tipo de cambio: S/' + rateRounded + ' por USD (actualizado hoy)';
+        regionText.textContent = '🇵🇪 Precios en soles peruanos';
         regionEl.style.display = 'block';
     }
 }
@@ -473,8 +453,7 @@ async function initGeoPricing() {
         const rate = await fetchBlueRate();
         if (rate) applyARSPricing(rate);
     } else if (country === 'PE') {
-        const rate = await fetchPENRate();
-        if (rate) applyPENPricing(rate);
+        applyPENPricing();
     }
     // Resto del mundo → mantiene precios en USD que están en el HTML
 }
