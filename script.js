@@ -12,43 +12,45 @@ const GFORM_FIELDS = {
     country:  'entry.801552343'  // Cambiado: Enviamos el País a este input adicional
 };
 
-// ── Chat Scenarios: Botica Perú + Restaurante Argentina + Bodega ──
+// ── Chat Scenarios: Focus on Food Stores ──
 const SCENARIOS = [
     {
-        badge: '🇵🇪 Botica — Perú',
-        bizName: 'Botica SaludMax',
-        ventas: 'S/ 3,180',
+        badge: '🇵🇪 Restaurante — Perú',
+        bizName: 'Cevichería Mar Azul',
+        ventas: 'S/ 4,280',
         messages: [
-            { role: 'in', text: 'Hola buenas! Tienen paracetamol? 💊', time: '09:15' },
-            { role: 'out', text: '¡Hola Rosa! 😊 Sí tenemos:\n\n💊 Paracetamol 500mg (10 tab) — S/3.50\n💊 Paracetamol 1g (10 tab) — S/5.00\n🧴 Paracetamol jarabe 120ml — S/8.50\n\n¿Cuál necesitas?', time: '09:15' },
-            { role: 'in', text: 'Dame 2 cajas de 500mg y una de jarabe porfa 🙏', time: '09:16' },
-            { role: 'out', text: '¡Perfecto! Tu pedido:\n\n2x Paracetamol 500mg = S/7.00\n1x Paracetamol jarabe = S/8.50\n\n🧾 Total: S/15.50\n\n📸 Envíame tu comprobante de pago y te lo tengo listo para recoger! 🏥', time: '09:16' },
-            { role: 'in', text: '[📸 Foto de comprobante Yape]', time: '09:17' },
-            { role: 'out', text: '✅ ¡Comprobante recibido y verificado!\n🔒 Registro guardado de forma segura.\n\nTu pedido estará listo en 5 minutos. ¡Gracias Rosa! 💚', time: '09:17' },
+            { role: 'in', text: 'Hola! Tienen ceviche de pescado? 🐟', time: '13:15' },
+            { role: 'out', text: '¡Hola María! 😊 ¡Claro que sí! Hoy tenemos:\n\n🐟 Ceviche de Pescado (Personal) — S/18.00\n🐟 Ceviche de Pescado (Grande) — S/32.00\n🦐 Ceviche Mixto — S/38.00\n🦑 Chicharrón de Calamar — S/25.00\n\n¿Qué te antoja hoy? 😋', time: '13:15' },
+            { role: 'in', text: 'Un ceviche grande y un chicharrón porfa! 🤤', time: '13:16' },
+            { role: 'out', text: '¡Perfecto María! Como eres clienta VIP te doy precio especial:\n\n1x Ceviche Pescado Grande = S/28.00 ⭐\n1x Chicharrón Calamar = S/22.00 ⭐\n\n🧾 Total VIP: S/50.00\n(¡Ahorraste S/9.00 por ser frecuente! 💚)\n\n📸 Envíame tu Yape y lo preparo fresco para ti!', time: '13:16' },
+            { role: 'in', text: '[📸 Comprobante Yape]', time: '13:17' },
+            { role: 'out', text: '✅ ¡Pago verificado!\n🔒 Registro guardado de forma segura.\n\nTu pedido estará listo en 15 minutos. ¡Buen provecho! 🇵🇪🔥', time: '13:17' },
         ]
     },
     {
-        badge: '🇦🇷 Restaurante — Argentina',
-        bizName: 'Perú para Ti',
-        ventas: '$ 48,500',
+        badge: '🇦🇷 Pizzería — Argentina',
+        bizName: 'Pizzería Napolitana',
+        ventas: '$ 52,400',
         messages: [
-            { role: 'in', text: 'Buenas! Quiero ver la carta 🍽️', time: '20:10' },
-            { role: 'out', text: '¡Hola Martín! 😊 Bienvenido a Perú para Ti!\n\nNuestra carta de hoy:\n🥘 Ceviche Mixto — $4.500\n🍗 Pollo a la Brasa — $6.200\n🥩 Lomo Saltado — $5.800\n🍤 Arroz con Mariscos — $7.000\n\n¿Qué te tienta hoy? 😋', time: '20:10' },
-            { role: 'in', text: 'Mándame un ceviche y un lomo, sos crack! 🤤', time: '20:11' },
-            { role: 'out', text: '¡Joya Martín! 🎉 Como sos cliente VIP te aplico precio especial:\n\n1x Ceviche Mixto = $4.000 ⭐\n1x Lomo Saltado = $5.200 ⭐\n\n🧾 Total VIP: $9.200\n(Ahorraste $1.100 por ser frecuente 💪)\n\n📸 Mandame el comprobante y te lo preparo!', time: '20:11' },
-            { role: 'in', text: '[📸 Transferencia MercadoPago]', time: '20:12' },
-            { role: 'out', text: '✅ ¡Comprobante verificado!\n🔒 Chat guardado en archivo seguro.\n\nEn 25 min lo tenés listo. ¡Buen provecho Martín! 🇵🇪🔥', time: '20:12' },
+            { role: 'in', text: 'Buenas! Qué pizzas tienen disponibles? 🍕', time: '21:30' },
+            { role: 'out', text: '¡Hola Javier! 😊 Bienvenido a Napolitana!\n\nNuestras pizzas:\n🍕 Muzzarella — $3.800\n🍕 Napolitana — $4.500\n🍕 Calabresa — $4.900\n🍕 Fugazzeta — $5.200\n🥤 + Coca-Cola 2.25L — $1.200\n\n¿Armamos tu pedido? 😋', time: '21:30' },
+            { role: 'in', text: 'Dame una fugazzeta y una coca! Tengo hambre ya 😅', time: '21:31' },
+            { role: 'out', text: '¡Dale Javier! 🎉 Sos cliente VIP, te aplico descuento:\n\n1x Fugazzeta = $4.700 ⭐\n1x Coca-Cola 2.25L = $1.000 ⭐\n\n🧾 Total VIP: $5.700\n(¡Ahorraste $700 por ser frecuente! 💪)\n\n📸 Mandame el comprobante y sale al horno!', time: '21:31' },
+            { role: 'in', text: '[📸 MercadoPago]', time: '21:32' },
+            { role: 'out', text: '✅ ¡Comprobante verificado!\n🔒 Pedido registrado de forma segura.\n\nEn 25 min la tenés en casa. ¡Buen provecho! 🍕🔥', time: '21:32' },
         ]
     },
     {
-        badge: '🇵🇪 Bodega — Perú',
-        bizName: 'Bodega Don Pepe',
-        ventas: 'S/ 1,890',
+        badge: '🇵🇪 Pollería — Perú',
+        bizName: 'Pollos a la Brasa El Sabor',
+        ventas: 'S/ 3,890',
         messages: [
-            { role: 'in', text: 'Casera! Me mandas arroz y aceite? 🛒', time: '11:45' },
-            { role: 'out', text: '¡Hola Señora Carmen! 😊\n\nTenemos para usted:\n🍚 Arroz Costeño 5kg — S/22.00\n🫒 Aceite Primor 1L — S/9.50\n🍚 Arroz a Granel 1kg — S/4.50\n🫒 Aceite Cil 1L — S/8.00\n\n¿Cuál prefiere?', time: '11:45' },
-            { role: 'in', text: 'El Costeño y el Primor, y mándame una gaseosa tb 🥤', time: '11:46' },
-            { role: 'out', text: '¡Listo Señora Carmen! Su pedido:\n\n1x Arroz Costeño 5kg = S/22.00\n1x Aceite Primor 1L = S/9.50\n1x Coca-Cola 1.5L = S/7.50\n\n🧾 Total: S/39.00\nComo es clienta frecuente: S/36.00 ⭐\n\n📸 Envíeme su Yape y se lo llevo a casita! 🏠', time: '11:46' },
+            { role: 'in', text: 'Hola! Cuánto está el pollo entero? 🍗', time: '19:45' },
+            { role: 'out', text: '¡Hola Carlos! 😊 Nuestros combos de hoy:\n\n🍗 1/4 Pollo + papas + ensalada — S/18.00\n🍗 1/2 Pollo + papas + ensalada — S/32.00\n🍗 Pollo Entero + 2 papas + ensalada — S/58.00\n🥤 Chicha Morada 1.5L — S/6.00\n\n¿Qué te llevás?', time: '19:45' },
+            { role: 'in', text: 'Mándame el pollo entero con todo y una chicha 🙏', time: '19:46' },
+            { role: 'out', text: '¡Perfecto Carlos! Tu pedido:\n\n1x Pollo Entero + 2 papas + ensalada = S/58.00\n1x Chicha Morada 1.5L = S/6.00\n\n🧾 Total: S/64.00\n\n📸 Envíame tu Yape y lo preparamos jugoso para ti! 🍗🔥', time: '19:46' },
+            { role: 'in', text: '[📸 Yape recibido]', time: '19:47' },
+            { role: 'out', text: '✅ ¡Pago confirmado!\n🔒 Pedido guardado de forma segura.\n\nTu pollo estará listo en 20 minutos. ¡Buen provecho! 😋', time: '19:47' },
         ]
     }
 ];
