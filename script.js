@@ -357,3 +357,82 @@ const dc = document.querySelector('.dash-chart');
 if (dc) dashObs.observe(dc);
 
 console.log('🚀 MAXin.ai Landing v3 loaded — Google Forms integrated');
+
+// ══════════════════════════════════════════════════════════════
+//   GEO PRICING — PE: USD · AR: ARS dólar blue en tiempo real
+// ══════════════════════════════════════════════════════════════
+
+const PLAN_USD = [20, 30, 50]; // Básico · Presencia · Publicidad
+
+async function fetchBlueRate() {
+    // Fuente primaria: dolarapi.com (refleja dolarhoy.com)
+    try {
+        const res = await fetch('https://dolarapi.com/v1/dolares/blue',
+            { signal: AbortSignal.timeout(7000) });
+        const data = await res.json();
+        if (data && data.venta) return Number(data.venta);
+    } catch (_) {}
+    // Fallback: bluelytics
+    try {
+        const res = await fetch('https://api.bluelytics.com.ar/v2/latest',
+            { signal: AbortSignal.timeout(7000) });
+        const data = await res.json();
+        if (data && data.blue && data.blue.value_sell) return Number(data.blue.value_sell);
+    } catch (_) {}
+    return null;
+}
+
+function applyARSPricing(blueRate) {
+    const rateRounded = Math.round(blueRate);
+    PLAN_USD.forEach((usd, i) => {
+        const ars = Math.round((usd * blueRate) / 100) * 100;
+        const arsFormatted = new Intl.NumberFormat('es-AR').format(ars);
+
+        const curEl  = document.getElementById('cur-'  + i);
+        const amtEl  = document.getElementById('amt-'  + i);
+        const exchEl = document.getElementById('exch-' + i);
+
+        if (curEl)  curEl.textContent  = '$';
+        if (amtEl)  amtEl.textContent  = arsFormatted;
+        if (exchEl) exchEl.textContent = '≈ USD ' + usd + ' | Dólar blue $' + rateRounded;
+    });
+
+    const regionEl   = document.getElementById('pricingRegion');
+    const regionText = document.getElementById('pricingRegionText');
+    if (regionEl && regionText) {
+        regionText.textContent = '🇦🇷 Precios en pesos argentinos — Dólar blue: $' + rateRounded + ' por USD (actualizado hoy)';
+        regionEl.style.display = 'block';
+    }
+}
+
+async function initGeoPricing() {
+    let country = null;
+    // Geo primario
+    try {
+        const res = await fetch('https://ip-api.com/json/?fields=countryCode,status',
+            { signal: AbortSignal.timeout(6000) });
+        const data = await res.json();
+        if (data && data.status === 'success' && typeof data.countryCode === 'string' && data.countryCode.length === 2) {
+            country = data.countryCode.toUpperCase();
+        }
+    } catch (_) {}
+    // Geo fallback
+    if (!country) {
+        try {
+            const res = await fetch('https://ipapi.co/country_code/',
+                { signal: AbortSignal.timeout(6000) });
+            const text = (await res.text()).trim().toUpperCase();
+            if (/^[A-Z]{2}$/.test(text)) country = text;
+        } catch (_) {}
+    }
+
+    console.log('[MAXin] Geo detected:', country);
+
+    if (country === 'AR') {
+        const rate = await fetchBlueRate();
+        if (rate) applyARSPricing(rate);
+    }
+    // Perú y resto del mundo → mantiene precios en USD que están en el HTML
+}
+
+initGeoPricing();

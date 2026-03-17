@@ -280,6 +280,30 @@
                     <h3>Precios Inteligentes</h3>
                     <p>Configura <strong>precio normal y precio mínimo</strong> por producto. El bot ofrece precio especial automáticamente a los clientes que tú elijas.</p>
                 </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">💬</div>
+                    </div>
+                    <h3>Configuración WhatsApp Business</h3>
+                    <p>Te configuramos tu cuenta de <strong>WhatsApp Business profesional</strong>: perfil de empresa, catálogo, respuestas rápidas y horarios. Tu negocio, con cara de empresa seria.</p>
+                    <ul class="feature-list">
+                        <li>Perfil verificado y completo</li>
+                        <li>Catálogo de productos integrado</li>
+                        <li>Etiquetas y respuestas predefinidas</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">🗺️</div>
+                    </div>
+                    <h3>Digitalización de tu Negocio</h3>
+                    <p>Ponemos tu negocio <strong>en el mapa digital</strong>: Google Maps, directorios del rubro y perfil online. Más visibilidad = más clientes que nunca antes te hubieran encontrado.</p>
+                    <ul class="feature-list">
+                        <li>Alta en Google Maps con fotos y horarios</li>
+                        <li>Perfil en directorios del rubro</li>
+                        <li>Reseñas y posicionamiento local</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -535,66 +559,76 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-badge">💎 Precios</div>
-                <h2 class="section-title">Invierte menos de lo que pagas por un <span class="gradient-text">cafecito diario</span></h2>
-                <p class="section-subtitle">Y obtén un vendedor que trabaja 24/7 sin quejarse, sin pedir aumento y sin llegar tarde</p>
+                <h2 class="section-title">La inversión que se <span class="gradient-text">paga sola</span> en la primera semana</h2>
+                <p class="section-subtitle">Menos de lo que pagas por un empleado — y trabaja 24/7 sin quejarse, sin pedir aumento y sin llegar tarde</p>
             </div>
+
+            <!-- Badge de región (visible solo para Argentina) -->
+            <div id="pricingRegion" style="display:none; text-align:center; margin-bottom:20px;">
+                <span id="pricingRegionText" style="display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:50px;background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);color:#00D4FF;font-size:0.85rem;font-weight:600;"></span>
+            </div>
+
             <div class="pricing-grid">
+                <!-- PLAN BÁSICO — $20 USD -->
                 <div class="pricing-card">
                     <div class="pricing-badge-free">🎁 Primer mes GRATIS</div>
-                    <h3 class="pricing-name">Emprendedor</h3>
+                    <h3 class="pricing-name">MAXin Básico</h3>
                     <div class="pricing-price">
-                        <span class="price-currency">S/</span>
-                        <span class="price-amount">30</span>
-                        <span class="price-period">/mes</span>
+                        <span class="price-currency" id="cur-0">$</span><span class="price-amount" id="amt-0" data-usd="20">20</span><span class="price-period">/mes</span>
                     </div>
-                    <p class="pricing-desc">Perfecto para negocios que están empezando</p>
+                    <p class="price-exch" id="exch-0" style="font-size:0.78rem;color:#8888a0;margin-bottom:8px;min-height:1.1em;"></p>
+                    <p class="pricing-desc">Tu vendedor IA por WhatsApp funcionando 24/7</p>
                     <ul class="pricing-features">
                         <li><span class="check">✅</span> Bot vendedor IA 24/7</li>
-                        <li><span class="check">✅</span> Hasta 50 productos</li>
+                        <li><span class="check">✅</span> Configuración de WhatsApp Business</li>
+                        <li><span class="check">✅</span> Hasta 100 productos</li>
                         <li><span class="check">✅</span> Dashboard de ventas</li>
-                        <li><span class="check">✅</span> Sistema anti-estafas</li>
+                        <li><span class="check">✅</span> Sistema anti-estafas SHA-256</li>
                         <li><span class="check">✅</span> Historial de clientes</li>
                         <li><span class="check">✅</span> Soporte por WhatsApp</li>
                     </ul>
                     <a href="#contacto" class="btn btn-outline btn-block">Empezar GRATIS</a>
                 </div>
+
+                <!-- PLAN PRO — $30 USD -->
                 <div class="pricing-card pricing-popular">
                     <div class="popular-badge">🔥 MÁS POPULAR</div>
                     <div class="pricing-badge-free">🎁 Primer mes GRATIS</div>
-                    <h3 class="pricing-name">Negocio Pro</h3>
+                    <h3 class="pricing-name">MAXin + Presencia</h3>
                     <div class="pricing-price">
-                        <span class="price-currency">S/</span>
-                        <span class="price-amount">60</span>
-                        <span class="price-period">/mes</span>
+                        <span class="price-currency" id="cur-1">$</span><span class="price-amount" id="amt-1" data-usd="30">30</span><span class="price-period">/mes</span>
                     </div>
-                    <p class="pricing-desc">Para negocios que quieren crecer en serio</p>
+                    <p class="price-exch" id="exch-1" style="font-size:0.78rem;color:#8888a0;margin-bottom:8px;min-height:1.1em;"></p>
+                    <p class="pricing-desc">MAXin + digitalización de tu negocio para más clientes y confianza</p>
                     <ul class="pricing-features">
-                        <li><span class="check">✅</span> Todo lo del plan Emprendedor</li>
+                        <li><span class="check">✅</span> Todo lo del plan Básico</li>
                         <li><span class="check">✅</span> Productos ilimitados</li>
                         <li><span class="check">✅</span> Clientes VIP con precios especiales</li>
                         <li><span class="check">✅</span> Seguimiento automático semanal</li>
-                        <li><span class="check">✅</span> Inteligencia de productos</li>
-                        <li><span class="check">✅</span> Alertas de vencimiento</li>
+                        <li><span class="check">✅</span> Inteligencia de productos + alertas de vencimiento</li>
                         <li><span class="check">✅</span> Reportes avanzados (Excel)</li>
+                        <li><span class="check">🗺️</span> <strong>Alta en Google Maps y directorios del rubro</strong></li>
+                        <li><span class="check">🏪</span> <strong>Digitalización del local (fotos, descripción, horarios)</strong></li>
                         <li><span class="check">✅</span> Soporte prioritario</li>
                     </ul>
                     <a href="#contacto" class="btn btn-primary btn-block btn-glow">Empezar GRATIS</a>
                 </div>
+
+                <!-- PLAN MAX — $50 USD -->
                 <div class="pricing-card">
                     <div class="pricing-badge-free">🎁 Primer mes GRATIS</div>
-                    <h3 class="pricing-name">Empresa</h3>
+                    <h3 class="pricing-name">MAXin + Publicidad</h3>
                     <div class="pricing-price">
-                        <span class="price-currency">S/</span>
-                        <span class="price-amount">100</span>
-                        <span class="price-period">/mes</span>
+                        <span class="price-currency" id="cur-2">$</span><span class="price-amount" id="amt-2" data-usd="50">50</span><span class="price-period">/mes</span>
                     </div>
-                    <p class="pricing-desc">Para negocios con alto volumen de ventas</p>
+                    <p class="price-exch" id="exch-2" style="font-size:0.78rem;color:#8888a0;margin-bottom:8px;min-height:1.1em;"></p>
+                    <p class="pricing-desc">Todo lo anterior + publicidad activa para multiplicar tus ingresos</p>
                     <ul class="pricing-features">
-                        <li><span class="check">✅</span> Todo lo del plan Pro</li>
-                        <li><span class="check">✅</span> Multi-sucursal</li>
-                        <li><span class="check">✅</span> API de integración</li>
-                        <li><span class="check">✅</span> Personalización avanzada del bot</li>
-                        <li><span class="check">✅</span> Dashboard en TV/Tablet (cocina)</li>
+                        <li><span class="check">✅</span> Todo lo del plan Presencia</li>
+                        <li><span class="check">📣</span> <strong>Campaña de publicidad digital activa</strong></li>
+                        <li><span class="check">📣</span> <strong>Contenido para redes sociales (Instagram/Facebook)</strong></li>
+                        <li><span class="check">📣</span> <strong>Captación de nuevos clientes por anuncios</strong></li>
+                        <li><span class="check">✅</span> Multi-sucursal / Multi-tienda</li>
                         <li><span class="check">✅</span> Onboarding dedicado</li>
                         <li><span class="check">✅</span> Soporte 24/7 con agente humano</li>
                     </ul>
