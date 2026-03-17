@@ -350,7 +350,7 @@ body {
     padding-left: 24px; position: relative; font-size: 0.88rem; color: var(--text-muted);
 }
 .feature-list li::before {
-    content: 'âœ“'; position: absolute; left: 0; color: var(--green); font-weight: 700;
+    content: '\2713'; position: absolute; left: 0; color: var(--green); font-weight: 700;
 }
 
 @media (max-width: 768px) {
