@@ -495,8 +495,8 @@ function initBrandAnimation() {
     let wordHeight = 0;
     let currentIndex = 0;
     let totalShown = 0;
-    const totalToShow = 12;
-    let delay = 320;
+    const totalToShow = 10;
+    let delay = 600;
 
     function getWordHeight() {
         const first = strip.querySelector('.brand-slot-word');
@@ -509,8 +509,8 @@ function initBrandAnimation() {
         totalShown++;
         strip.style.transform = `translateY(-${currentIndex * wordHeight}px)`;
 
-        if (totalShown >= totalToShow - 4) {
-            delay += 150; // Slow down near end
+        if (totalShown >= totalToShow - 3) {
+            delay += 300; // Slow down a lot near end
         }
 
         if (totalShown < totalToShow) {
