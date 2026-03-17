@@ -364,6 +364,47 @@ console.log('🚀 MAXin.ai Landing v3 loaded — Google Forms integrated');
 
 const PLAN_USD = [20, 30, 50]; // Básico · Presencia · Publicidad
 
+async function fetchPENRate() {
+    // Fuente primaria: frankfurter.app (datos BCE, sin API key)
+    try {
+        const res = await fetch('https://api.frankfurter.app/latest?from=USD&to=PEN',
+            { signal: AbortSignal.timeout(7000) });
+        const data = await res.json();
+        if (data && data.rates && data.rates.PEN) return Number(data.rates.PEN);
+    } catch (_) {}
+    // Fallback: open.er-api.com
+    try {
+        const res = await fetch('https://open.er-api.com/v6/latest/USD',
+            { signal: AbortSignal.timeout(7000) });
+        const data = await res.json();
+        if (data && data.rates && data.rates.PEN) return Number(data.rates.PEN);
+    } catch (_) {}
+    return null;
+}
+
+function applyPENPricing(penRate) {
+    const rateRounded = penRate.toFixed(2);
+    PLAN_USD.forEach((usd, i) => {
+        const pen = Math.round((usd * penRate) / 10) * 10;
+        const penFormatted = new Intl.NumberFormat('es-PE').format(pen);
+
+        const curEl  = document.getElementById('cur-'  + i);
+        const amtEl  = document.getElementById('amt-'  + i);
+        const exchEl = document.getElementById('exch-' + i);
+
+        if (curEl)  curEl.textContent  = 'S/';
+        if (amtEl)  amtEl.textContent  = penFormatted;
+        if (exchEl) exchEl.textContent = '≈ USD ' + usd + ' | Tipo de cambio S/' + rateRounded;
+    });
+
+    const regionEl   = document.getElementById('pricingRegion');
+    const regionText = document.getElementById('pricingRegionText');
+    if (regionEl && regionText) {
+        regionText.textContent = '🇵🇪 Precios en soles peruanos — Tipo de cambio: S/' + rateRounded + ' por USD (actualizado hoy)';
+        regionEl.style.display = 'block';
+    }
+}
+
 async function fetchBlueRate() {
     // Fuente primaria: dolarapi.com (refleja dolarhoy.com)
     try {
@@ -431,8 +472,11 @@ async function initGeoPricing() {
     if (country === 'AR') {
         const rate = await fetchBlueRate();
         if (rate) applyARSPricing(rate);
+    } else if (country === 'PE') {
+        const rate = await fetchPENRate();
+        if (rate) applyPENPricing(rate);
     }
-    // Perú y resto del mundo → mantiene precios en USD que están en el HTML
+    // Resto del mundo → mantiene precios en USD que están en el HTML
 }
 
 initGeoPricing();
