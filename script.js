@@ -495,8 +495,8 @@ function initBrandAnimation() {
     let wordHeight = 0;
     let currentIndex = 0;
     let totalShown = 0;
-    const totalToShow = 8;
-    let delay = 1200;
+    const totalToShow = 6;
+    let delay = 2000;
 
     function getWordHeight() {
         const first = strip.querySelector('.brand-slot-word');
