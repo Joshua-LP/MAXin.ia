@@ -627,9 +627,10 @@ select.form-input { appearance: none; cursor: pointer; }
 /* â”€â”€ Toast â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .toast {
     position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%);
-    z-index: 9999; transition: bottom 0.5s ease;
+    z-index: 9999; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0; pointer-events: none; visibility: hidden;
 }
-.toast.show { bottom: 30px; }
+.toast.show { bottom: 90px; opacity: 1; pointer-events: auto; visibility: visible; }
 .toast-content {
     display: flex; align-items: center; gap: 10px;
     padding: 16px 28px; background: rgba(20,20,35,0.95);
@@ -706,9 +707,9 @@ select.form-input { appearance: none; cursor: pointer; }
     html, body { overflow-x: hidden; width: 100%; position: relative; }
     .container { padding: 0 16px; }
     .hero { padding: 110px 0 40px; overflow-x: hidden; width: 100%; box-sizing: border-box; }
-    .hero-container { grid-template-columns: 1fr; text-align: center; gap: 30px; }
-    .hero-brand { font-size: 1.8rem; justify-content: center; margin-bottom: 1.2rem; }
-    .brand-slot-window { min-width: 5em; }
+    .hero-container { grid-template-columns: 1fr; text-align: center; gap: 30px; padding: 0 16px; width: 100%; }
+    .hero-brand { font-size: 1.5rem; justify-content: center; margin-bottom: 1.2rem; flex-wrap: wrap; }
+    .brand-slot-window { min-width: 4em; }
     .hero-title { font-size: 2rem; }
     .hero-subtitle { font-size: 0.95rem; }
     .hero-badge { font-size: 0.8rem; padding: 10px 14px; white-space: normal; height: auto; text-align: left; }
