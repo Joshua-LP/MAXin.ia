@@ -43,9 +43,9 @@ Abre en tu navegador `http://localhost:8000`
 ---
 
 ### 💳 Nuestros Planes
-- 🔥 **Emprendedor:** S/30 mes
-- 🚀 **Negocio Pro:** S/60 mes *(El más popular)*
-- 💼 **Empresa:** S/100 mes
+- 🔥 **Emprendedor:** S/50 mes
+- 🚀 **Negocio Pro:** S/100 mes *(El más popular)*
+- 💼 **Empresa:** S/300 mes
 
 Todos los planes incluyen **Sistema de Prevención Integral de Estafas SHA-256** exclusivo del mercado y prueba gratis de 30 días. Tu éxito está garantizado.
 
