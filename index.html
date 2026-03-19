@@ -60,8 +60,17 @@
     <section id="hero" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-brand animate-fade-up" style="display:flex; justify-content:center; align-items:center; margin-bottom: 30px;">
-                    <img src="new_logo.png" alt="MAXin.ai Logo" style="height: 100px; max-width: 100%; object-fit: contain;">
+                <!-- Brand Animation: Slot Machine -->
+                <div class="hero-brand animate-fade-up">
+                    <div class="brand-spin" id="brandSpin">
+                        <span class="brand-max">MAX</span><span class="brand-in">in</span>
+                        <span class="brand-slot-window">
+                            <span class="brand-slot-strip" id="brandStrip"></span>
+                        </span>
+                    </div>
+                    <div class="brand-final" id="brandFinal">
+                        <span class="bf-name">MAXin</span><span style="color: var(--primary); font-family: var(--font-display); font-weight: 800; font-size: inherit;">.ai</span>
+                    </div>
                 </div>
 
                 <div class="hero-badge animate-fade-up delay-1">
