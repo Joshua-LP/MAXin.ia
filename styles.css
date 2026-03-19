@@ -210,9 +210,13 @@ body {
     justify-content: flex-start;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.5s ease;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.brand-final.visible { opacity: 1; }
+.brand-final.visible { 
+    opacity: 1; 
+    transform: scale(1.15); /* Efecto de crecimiento solicitado */
+}
 .bf-bracket {
     color: var(--primary);
     font-size: 0.85em;
@@ -708,8 +712,9 @@ select.form-input { appearance: none; cursor: pointer; }
     .container { padding: 0 16px; }
     .hero { padding: 110px 0 40px; overflow-x: hidden; width: 100%; box-sizing: border-box; }
     .hero-container { grid-template-columns: 1fr; text-align: center; gap: 30px; padding: 0 16px; width: 100%; }
-    .hero-brand { font-size: 1.5rem; justify-content: center; margin-bottom: 1.2rem; flex-wrap: wrap; }
-    .brand-slot-window { min-width: 4em; }
+    .hero-brand { font-size: 1.6rem; justify-content: center; margin-bottom: 1.2rem; }
+    .brand-spin, .brand-final { justify-content: center; }
+    .brand-slot-window { min-width: 0; width: max-content; padding-right: 0.25em; }
     .hero-title { font-size: 2rem; }
     .hero-subtitle { font-size: 0.95rem; }
     .hero-badge { font-size: 0.8rem; padding: 10px 14px; white-space: normal; height: auto; text-align: left; }
