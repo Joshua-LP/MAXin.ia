@@ -536,9 +536,17 @@
                 <p class="section-subtitle">Menos de lo que pagas por un empleado — y trabaja 24/7 sin quejarse, sin pedir aumento y sin llegar tarde</p>
             </div>
 
-            <!-- Badge de región (visible solo para Argentina) -->
-            <div id="pricingRegion" style="display:none; text-align:center; margin-bottom:20px;">
-                <span id="pricingRegionText" style="display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:50px;background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);color:#00D4FF;font-size:0.85rem;font-weight:600;"></span>
+            <!-- Badge de región y Toggle -->
+            <div id="pricingRegion" style="text-align:center; margin-bottom:24px; display:flex; flex-direction:column; align-items:center; gap:12px;">
+                <span id="pricingRegionText" style="display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:50px;background:rgba(255,50,50,0.1);border:1px solid rgba(255,50,50,0.3);color:#ff4444;font-size:0.9rem;font-weight:600;">🇵🇪 Precios en soles peruanos</span>
+                <div class="geo-toggle-wrapper">
+                    <span class="geo-label" id="lbl-pen" style="color:var(--primary); font-weight:bold;">Perú (PEN)</span>
+                    <label class="geo-switch">
+                        <input type="checkbox" id="geoToggle" aria-label="Cambiar región de precios">
+                        <span class="geo-slider"></span>
+                    </label>
+                    <span class="geo-label" id="lbl-ars">Argentina (ARS)</span>
+                </div>
             </div>
 
             <div class="pricing-grid">

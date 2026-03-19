@@ -868,3 +868,23 @@ select.form-input { appearance: none; cursor: pointer; }
     .btn-promo-small { margin-left: 0; width: 100%; padding: 10px; }
     .promo-close { right: 10px; top: 10px; background: transparent; }
 }
+
+/* === GEO TOGGLE === */
+.geo-toggle-wrapper {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--bg-card); padding: 8px 16px; border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.geo-label { font-size: 0.85rem; color: var(--text-muted); transition: 0.3s; }
+.geo-switch { position: relative; display: inline-block; width: 44px; height: 24px; margin: 0; }
+.geo-switch input { opacity: 0; width: 0; height: 0; }
+.geo-slider {
+    position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(255,255,255,0.1); transition: .4s; border-radius: 24px;
+}
+.geo-slider:before {
+    position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px;
+    background-color: white; transition: .4s; border-radius: 50%;
+}
+.geo-switch input:checked + .geo-slider { background-color: #3498db; }
+.geo-switch input:checked + .geo-slider:before { transform: translateX(20px); }

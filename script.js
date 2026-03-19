@@ -385,11 +385,9 @@ function applyPENPricing() {
         el.innerHTML = 'Probar por S/ 15';
     });
 
-    const regionEl   = document.getElementById('pricingRegion');
     const regionText = document.getElementById('pricingRegionText');
-    if (regionEl && regionText) {
+    if (regionText) {
         regionText.textContent = '🇵🇪 Precios en soles peruanos';
-        regionEl.style.display = 'block';
     }
 }
 
@@ -426,11 +424,9 @@ function applyARSPricing(blueRate) {
         if (exchEl) exchEl.textContent = '≈ USD ' + usd + ' | Dólar blue $' + rateRounded;
     });
 
-    const regionEl   = document.getElementById('pricingRegion');
     const regionText = document.getElementById('pricingRegionText');
-    if (regionEl && regionText) {
-        regionText.textContent = '🇦🇷 Precios en pesos argentinos — Dólar blue: $' + rateRounded + ' por USD (actualizado hoy)';
-        regionEl.style.display = 'block';
+    if (regionText) {
+        regionText.textContent = '🇦🇷 Precios en pesos argentinos — Dólar blue: $' + rateRounded + ' por USD';
     }
 }
 
@@ -458,12 +454,45 @@ async function initGeoPricing() {
     console.log('[MAXin] Geo detected:', country);
 
     if (country === 'AR') {
-        const rate = await fetchBlueRate();
-        if (rate) applyARSPricing(rate);
+        const toggle = document.getElementById('geoToggle');
+        if(toggle && !toggle.checked) {
+            toggle.checked = true;
+            toggle.dispatchEvent(new Event('change'));
+        } else {
+            const rate = await fetchBlueRate();
+            if (rate) applyARSPricing(rate);
+        }
     } else if (country === 'PE') {
         applyPENPricing();
     }
     // Resto del mundo → mantiene precios en USD que están en el HTML
+}
+
+// Geo Toggle Event
+const geoToggle = document.getElementById('geoToggle');
+const lblPen = document.getElementById('lbl-pen');
+const lblArs = document.getElementById('lbl-ars');
+
+if(geoToggle) {
+    geoToggle.addEventListener('change', async (e) => {
+        if(e.target.checked) {
+            // ARS mode
+            lblPen.style.color = 'var(--text-muted)'; lblPen.style.fontWeight = 'normal';
+            lblArs.style.color = '#3498db'; lblArs.style.fontWeight = 'bold';
+            const regionText = document.getElementById('pricingRegionText');
+            if(regionText) regionText.textContent = '🇦🇷 Calculando precios en Pesos...';
+            let rate = await fetchBlueRate();
+            if(!rate) rate = 1100; // fallback
+            applyARSPricing(rate);
+        } else {
+            // PEN mode
+            lblArs.style.color = 'var(--text-muted)'; lblArs.style.fontWeight = 'normal';
+            lblPen.style.color = 'var(--primary)'; lblPen.style.fontWeight = 'bold';
+            const regionText = document.getElementById('pricingRegionText');
+            if(regionText) regionText.textContent = '🇵🇪 Precios en soles peruanos';
+            applyPENPricing();
+        }
+    });
 }
 
 initGeoPricing();
