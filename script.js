@@ -535,16 +535,31 @@ function initBrandAnimation() {
     const totalToShow = 6;
     let delay = 2000;
 
+    const slotWindow = document.querySelector('.brand-slot-window');
+    
+    function updateWindowWidth(index) {
+        if (!slotWindow) return;
+        const words = strip.querySelectorAll('.brand-slot-word');
+        if (words[index]) {
+            slotWindow.style.width = words[index].getBoundingClientRect().width + 'px';
+        }
+    }
+
     function getWordHeight() {
         const first = strip.querySelector('.brand-slot-word');
         return first ? first.offsetHeight : 50;
     }
+
+    // Set initial width
+    setTimeout(() => updateWindowWidth(0), 50);
 
     function spinNext() {
         if (!wordHeight) wordHeight = getWordHeight();
         currentIndex++;
         totalShown++;
         strip.style.transform = `translateY(-${currentIndex * wordHeight}px)`;
+        
+        updateWindowWidth(currentIndex);
 
         if (totalShown >= totalToShow - 3) {
             delay += 500; // Slow down a lot near end
