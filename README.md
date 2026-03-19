@@ -51,6 +51,6 @@ Todos los planes incluyen **Sistema de Prevención Integral de Estafas SHA-256**
 
 <br/>
 <div align="center">
-  <p>De emprendedores para emprendedores. 🇵🇪 🇦🇷<br/>
+  <p>De emprendedores para emprendedores. 🇵🇪 + 🇦🇷<br/>
   <b>Porque en MAXin.ai las ventas nunca duermen.</b></p>
 </div>
