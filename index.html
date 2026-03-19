@@ -26,8 +26,8 @@
     <nav id="navbar" class="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">
-                <img src="logo.png" alt="MAXin.ai" class="logo-img">
-                <span class="logo-text">MAXin<span class="logo-dot">.ai</span></span>
+                <img src="new_logo.png" alt="MAXin.ai" class="logo-img" style="height: 36px; width: auto; max-width: 150px; object-fit: contain;">
+                <span class="logo-text" style="display: none;">MAXin</span>
             </a>
             <div class="nav-links" id="navLinks">
                 <a href="#features" class="nav-link">Características</a>
@@ -60,17 +60,8 @@
     <section id="hero" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <!-- Brand Animation: Slot Machine -->
-                <div class="hero-brand animate-fade-up">
-                    <div class="brand-spin" id="brandSpin">
-                        <span class="brand-max">MAX</span><span class="brand-in">in</span>
-                        <span class="brand-slot-window">
-                            <span class="brand-slot-strip" id="brandStrip"></span>
-                        </span>
-                    </div>
-                    <div class="brand-final" id="brandFinal">
-                        <span class="bf-bracket bf-lt">&lt;</span><span class="bf-name">MAXin</span><span class="bf-bracket bf-gt">/&gt;</span>
-                    </div>
+                <div class="hero-brand animate-fade-up" style="display:flex; justify-content:center; align-items:center; margin-bottom: 30px;">
+                    <img src="new_logo.png" alt="MAXin.ai Logo" style="height: 100px; max-width: 100%; object-fit: contain;">
                 </div>
 
                 <div class="hero-badge animate-fade-up delay-1">
@@ -110,7 +101,7 @@
                                     <div class="chat-name" id="chatBizName">MAXin Bot</div>
                                     <div class="chat-status" id="chatStatus">en línea</div>
                                 </div>
-                                <div class="chat-scenario-badge" id="scenarioBadge">🇵🇪 Botica — Perú</div>
+                                <div class="chat-scenario-badge" id="scenarioBadge">🇵🇪 Restaurante — Perú</div>
                             </div>
                             <div class="chat-messages" id="chatMessages">
                                 <!-- Messages injected by JS -->
@@ -149,7 +140,7 @@
         </div>
         <div class="hero-stats">
             <div class="stat-item">
-                <span class="stat-number" data-target="2">0</span><span class="stat-suffix"></span>
+                <span class="stat-number" data-target="5">0</span><span class="stat-suffix"></span>
                 <span class="stat-label">Negocios confían en nosotros</span>
             </div>
             <div class="stat-divider"></div>
@@ -544,10 +535,10 @@
             <div class="pricing-grid">
                 <!-- PLAN BÁSICO — $20 USD -->
                 <div class="pricing-card">
-                    <div class="pricing-badge-free">🎁 Primer mes GRATIS</div>
+                    <div class="pricing-badge-free badge-promo">🎁 1er mes de cortesía (S/ 15)</div>
                     <h3 class="pricing-name">MAXin Básico</h3>
                     <div class="pricing-price">
-                        <span class="price-currency" id="cur-0">$</span><span class="price-amount" id="amt-0" data-usd="20">20</span><span class="price-period">/mes</span>
+                        <span class="price-currency" id="cur-0">S/ </span><span class="price-amount" id="amt-0" data-usd="100">50</span><span class="price-period">/mes</span>
                     </div>
                     <p class="price-exch" id="exch-0" style="font-size:0.78rem;color:#8888a0;margin-bottom:8px;min-height:1.1em;"></p>
                     <p class="pricing-desc">Tu vendedor IA por WhatsApp funcionando 24/7</p>
@@ -560,16 +551,16 @@
                         <li><span class="check">✅</span> Historial de clientes</li>
                         <li><span class="check">✅</span> Soporte por WhatsApp</li>
                     </ul>
-                    <a href="#contacto" class="btn btn-outline btn-block">Empezar GRATIS</a>
+                    <a href="#contacto" class="btn btn-outline btn-block btn-promo">Probar por S/ 15</a>
                 </div>
 
                 <!-- PLAN PRO — $30 USD -->
                 <div class="pricing-card pricing-popular">
                     <div class="popular-badge">🔥 MÁS POPULAR</div>
-                    <div class="pricing-badge-free">🎁 Primer mes GRATIS</div>
+                    <div class="pricing-badge-free badge-promo">🎁 1er mes de cortesía (S/ 15)</div>
                     <h3 class="pricing-name">MAXin + Presencia</h3>
                     <div class="pricing-price">
-                        <span class="price-currency" id="cur-1">$</span><span class="price-amount" id="amt-1" data-usd="30">30</span><span class="price-period">/mes</span>
+                        <span class="price-currency" id="cur-1">S/ </span><span class="price-amount" id="amt-1" data-usd="150">100</span><span class="price-period">/mes</span>
                     </div>
                     <p class="price-exch" id="exch-1" style="font-size:0.78rem;color:#8888a0;margin-bottom:8px;min-height:1.1em;"></p>
                     <p class="pricing-desc">MAXin + digitalización de tu negocio para más clientes y confianza</p>
@@ -584,15 +575,15 @@
                         <li><span class="check">🏪</span> <strong>Digitalización del local (fotos, descripción, horarios)</strong></li>
                         <li><span class="check">✅</span> Soporte prioritario</li>
                     </ul>
-                    <a href="#contacto" class="btn btn-primary btn-block btn-glow">Empezar GRATIS</a>
+                    <a href="#contacto" class="btn btn-primary btn-block btn-glow btn-promo">Probar por S/ 15</a>
                 </div>
 
                 <!-- PLAN MAX — $50 USD -->
                 <div class="pricing-card">
-                    <div class="pricing-badge-free">🎁 Primer mes GRATIS</div>
+                    <div class="pricing-badge-free badge-promo">🎁 1er mes de cortesía (S/ 15)</div>
                     <h3 class="pricing-name">MAXin + Publicidad</h3>
                     <div class="pricing-price">
-                        <span class="price-currency" id="cur-2">$</span><span class="price-amount" id="amt-2" data-usd="50">50</span><span class="price-period">/mes</span>
+                        <span class="price-currency" id="cur-2">S/ </span><span class="price-amount" id="amt-2" data-usd="250">300</span><span class="price-period">/mes</span>
                     </div>
                     <p class="price-exch" id="exch-2" style="font-size:0.78rem;color:#8888a0;margin-bottom:8px;min-height:1.1em;"></p>
                     <p class="pricing-desc">Todo lo anterior + publicidad activa para multiplicar tus ingresos</p>
@@ -627,37 +618,118 @@
                 <div class="section-badge">💬 Testimonios</div>
                 <h2 class="section-title">Lo que dicen nuestros <span class="gradient-text">clientes</span></h2>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Antes perdía como 20 clientes al día porque no podía responder a tiempo. Con MAXin, <strong>mis ventas subieron un 180%</strong> el primer mes. Es como tener un empleado que nunca se cansa."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">CR</div>
-                        <div>
-                            <span class="author-name">Carlos Rodríguez</span>
-                            <span class="author-business">Cevichería Don Carlos — Lima</span>
+            <div class="testimonials-marquee-wrapper" aria-hidden="true">
+                <div class="testimonials-marquee">
+                    <!-- 5 testimonios humanos -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"La verdad, antes se me iban varios clientes porque no llegaba a responder a tiempo… fácil 15 o 20 en días movidos. Desde que uso MAXin todo es más rápido y ordenado. El primer mes sí noté bastante el cambio, vendí mucho más. Es como tener a alguien ayudándome todo el día, sin estar detrás."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">CR</div>
+                            <div>
+                                <span class="author-name">Carlos Rodríguez</span>
+                                <span class="author-business">Cevichería Don Carlos</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Lo mejor es el <strong>sistema anti-estafas</strong>. Antes me mandaban comprobantes falsos y perdía mercadería. Ahora todo queda registrado y verificado. <strong>Más tranquilidad imposible.</strong>"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">LM</div>
-                        <div>
-                            <span class="author-name">Lucía Mendoza</span>
-                            <span class="author-business">Farmacia Salud Total — Arequipa</span>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"A mí lo que más me ayuda es que ya no tengo ese miedo de los comprobantes falsos. Antes me pasó varias veces y era un dolor de cabeza. Ahora todo queda registrado y se revisa solo… sinceramente me da más tranquilidad para trabajar."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">LM</div>
+                            <div>
+                                <span class="author-name">Lucía Mendoza</span>
+                                <span class="author-business">Restaurante El Tondero</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Mis clientes frecuentes aman que el bot ya les conoce y les ofrece su precio especial. <strong>La fidelización automática es magia</strong>. Vuelven cada semana sin que yo haga nada."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JP</div>
-                        <div>
-                            <span class="author-name">Javier Paredes</span>
-                            <span class="author-business">Bodega JP — Trujillo</span>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"He notado que mis clientes ya se acostumbraron… algunos incluso regresan solos porque ya saben cómo funciona. El sistema reconoce a varios y les da su precio, y eso les gusta bastante. Yo ya no tengo que estar pendiente todo el tiempo y aun así siguen comprando."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JP</div>
+                            <div>
+                                <span class="author-name">Javier Paredes</span>
+                                <span class="author-business">Pizzería JP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Al principio dudaba un poco si la gente iba a querer pedir por una IA, la verdad. Pero es tan natural que fluye solo. Aparte de los pedidos, me sorprendió cómo organiza todo para el cierre... ahora descanso mejor sabiendo que los cobros de Yape no fallan."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">FE</div>
+                            <div>
+                                <span class="author-name">Fernando Vega</span>
+                                <span class="author-business">Pollería El Macho</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Mira, yo pagaba a alguien solo para contestar chats por las noches. Ahora el local vende 24/7 y no me preocupo si es domingo o feriado. Literalmente se paga solo en la primera semana... me quitó un peso de encima."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MA</div>
+                            <div>
+                                <span class="author-name">María Antonieta</span>
+                                <span class="author-business">Chifa Las Gaviotas</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicados para el scroll infinito -->
+                    <div class="testimonial-card" aria-hidden="true">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"La verdad, antes se me iban varios clientes porque no llegaba a responder a tiempo… fácil 15 o 20 en días movidos. Desde que uso MAXin todo es más rápido y ordenado. El primer mes sí noté bastante el cambio, vendí mucho más. Es como tener a alguien ayudándome todo el día, sin estar detrás."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">CR</div>
+                            <div>
+                                <span class="author-name">Carlos Rodríguez</span>
+                                <span class="author-business">Cevichería Don Carlos</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" aria-hidden="true">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"A mí lo que más me ayuda es que ya no tengo ese miedo de los comprobantes falsos. Antes me pasó varias veces y era un dolor de cabeza. Ahora todo queda registrado y se revisa solo… sinceramente me da más tranquilidad para trabajar."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">LM</div>
+                            <div>
+                                <span class="author-name">Lucía Mendoza</span>
+                                <span class="author-business">Restaurante El Tondero</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" aria-hidden="true">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"He notado que mis clientes ya se acostumbraron… algunos incluso regresan solos porque ya saben cómo funciona. El sistema reconoce a varios y les da su precio, y eso les gusta bastante. Yo ya no tengo que estar pendiente todo el tiempo y aun así siguen comprando."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JP</div>
+                            <div>
+                                <span class="author-name">Javier Paredes</span>
+                                <span class="author-business">Pizzería JP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" aria-hidden="true">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Al principio dudaba un poco si la gente iba a querer pedir por una IA, la verdad. Pero es tan natural que fluye solo. Aparte de los pedidos, me sorprendió cómo organiza todo para el cierre... ahora descanso mejor sabiendo que los cobros de Yape no fallan."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">FE</div>
+                            <div>
+                                <span class="author-name">Fernando Vega</span>
+                                <span class="author-business">Pollería El Macho</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" aria-hidden="true">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Mira, yo pagaba a alguien solo para contestar chats por las noches. Ahora el local vende 24/7 y no me preocupo si es domingo o feriado. Literalmente se paga solo en la primera semana... me quitó un peso de encima."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MA</div>
+                            <div>
+                                <span class="author-name">María Antonieta</span>
+                                <span class="author-business">Chifa Las Gaviotas</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -691,12 +763,12 @@
                             <label class="form-label" for="ctaBusiness">🏪 Tipo de negocio</label>
                             <select id="ctaBusiness" class="form-input form-select">
                                 <option value="" disabled selected>Selecciona tu tipo de negocio</option>
-                                <option value="🍽️ Restaurante / Comida">🍽️ Restaurante / Comida</option>
-                                <option value="💊 Farmacia / Botica">💊 Farmacia / Botica</option>
-                                <option value="🛒 Tienda / Bodega">🛒 Tienda / Bodega</option>
-                                <option value="🔧 Ferretería">🔧 Ferretería</option>
-                                <option value="🥬 Verdulería / Frutería">🥬 Verdulería / Frutería</option>
-                                <option value="🏪 Otro negocio">🏪 Otro negocio</option>
+                                <option value="🍽️ Restaurante / Chifa">🍽️ Restaurante / Chifa</option>
+                                <option value="🍕 Pizzería / Fast Food">🍕 Pizzería / Fast Food</option>
+                                <option value="🍣 Cevichería / Marisquería">🍣 Cevichería / Marisquería</option>
+                                <option value="🍰 Cafetería / Pastelería">🍰 Cafetería / Pastelería</option>
+                                <option value="🍔 Food Truck / Delivery">🍔 Food Truck / Delivery</option>
+                                <option value="🏪 Otro negocio de comida">🏪 Otro negocio de comida</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -730,8 +802,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <img src="logo.png" alt="MAXin.ai" class="logo-img">
-                        <span class="logo-text">MAXin<span class="logo-dot">.ai</span></span>
+                        <img src="new_logo.png" alt="MAXin.ai" class="logo-img" style="height: 32px; width: auto;">
                     </div>
                     <p class="footer-desc">Tu vendedor inteligente por WhatsApp. Vende más, trabaja menos, vive mejor.</p>
                     <div class="footer-social">
@@ -768,6 +839,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating Promo -->
+    <div class="floating-promo" id="floatingPromo">
+        <div class="promo-content">
+            <span class="promo-icon">🎁</span>
+            <p>Oferta Especial: <strong class="promo-highlight">1er mes a solo S/ 15</strong></p>
+        </div>
+        <a href="#contacto" class="btn btn-primary btn-glow btn-promo-small">Probar Ahora</a>
+        <button class="promo-close" onclick="document.getElementById('floatingPromo').style.display='none'" aria-label="Cerrar">✕</button>
+    </div>
 
     <!-- Notification Toast -->
     <div id="toast" class="toast">

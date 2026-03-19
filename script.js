@@ -12,43 +12,43 @@ const GFORM_FIELDS = {
     country:  'entry.801552343'  // Cambiado: Enviamos el País a este input adicional
 };
 
-// ── Chat Scenarios: Botica Perú + Restaurante Argentina + Bodega ──
+// ── Chat Scenarios: Restaurantes y Sitios de Comida ──
 const SCENARIOS = [
     {
-        badge: '🇵🇪 Botica — Perú',
-        bizName: 'Botica SaludMax',
-        ventas: 'S/ 3,180',
+        badge: '🇵🇪 Restaurante — Perú',
+        bizName: 'El Tablón',
+        ventas: 'S/ 5,820',
         messages: [
-            { role: 'in', text: 'Hola buenas! Tienen paracetamol? 💊', time: '09:15' },
-            { role: 'out', text: '¡Hola Rosa! 😊 Sí tenemos:\n\n💊 Paracetamol 500mg (10 tab) — S/3.50\n💊 Paracetamol 1g (10 tab) — S/5.00\n🧴 Paracetamol jarabe 120ml — S/8.50\n\n¿Cuál necesitas?', time: '09:15' },
-            { role: 'in', text: 'Dame 2 cajas de 500mg y una de jarabe porfa 🙏', time: '09:16' },
-            { role: 'out', text: '¡Perfecto! Tu pedido:\n\n2x Paracetamol 500mg = S/7.00\n1x Paracetamol jarabe = S/8.50\n\n🧾 Total: S/15.50\n\n📸 Envíame tu comprobante de pago y te lo tengo listo para recoger! 🏥', time: '09:16' },
-            { role: 'in', text: '[📸 Foto de comprobante Yape]', time: '09:17' },
-            { role: 'out', text: '✅ ¡Comprobante recibido y verificado!\n🔒 Registro guardado de forma segura.\n\nTu pedido estará listo en 5 minutos. ¡Gracias Rosa! 💚', time: '09:17' },
+            { role: 'in', text: 'Hola, buenas tardes! Me pasas la carta porfa? 🍗', time: '12:15' },
+            { role: 'out', text: '¡Hola! 🌟 Qué gusto saludarte. Hoy en El Tablón tenemos listos nuestros clásicos para ti:\n\n🍗 Pollo a la Brasa Entero — S/65.00\n🥗 Ensalada Clásica Familiar — S/15.00\n🥤 Chicha de Jora 1L — S/12.00\n\n¿Qué se te antoja hoy para el almuerzo?', time: '12:15' },
+            { role: 'in', text: 'Un pollo entero y la chicha de litro', time: '12:16' },
+            { role: 'out', text: '¡Excelente elección! 🍽️ Procesando tu pedido:\n\n1x Pollo Entero = S/65.00\n1x Chicha 1L = S/12.00\n\n🧾 Total de tu pedido: S/77.00\n\n📸 Solo envíame tu comprobante Yape o Plin por aquí y lo enviamos al instante 🚀', time: '12:16' },
+            { role: 'in', text: '[📸 Foto de comprobante Yape]', time: '12:17' },
+            { role: 'out', text: '✅ ¡Pago validado exitosamente!\n🔒 Tu pedido ya está en cocina.\n\nEn un aproximado de 35 minutos llegará a tu casa calentito. ¡Gracias por preferir El Tablón! 👨🍳', time: '12:17' },
         ]
     },
     {
         badge: '🇦🇷 Restaurante — Argentina',
-        bizName: 'Perú para Ti',
-        ventas: '$ 48,500',
+        bizName: 'Club de la Milanesa',
+        ventas: '$ 125,500',
         messages: [
-            { role: 'in', text: 'Buenas! Quiero ver la carta 🍽️', time: '20:10' },
-            { role: 'out', text: '¡Hola Martín! 😊 Bienvenido a Perú para Ti!\n\nNuestra carta de hoy:\n🥘 Ceviche Mixto — $4.500\n🍗 Pollo a la Brasa — $6.200\n🥩 Lomo Saltado — $5.800\n🍤 Arroz con Mariscos — $7.000\n\n¿Qué te tienta hoy? 😋', time: '20:10' },
-            { role: 'in', text: 'Mándame un ceviche y un lomo, sos crack! 🤤', time: '20:11' },
-            { role: 'out', text: '¡Joya Martín! 🎉 Como sos cliente VIP te aplico precio especial:\n\n1x Ceviche Mixto = $4.000 ⭐\n1x Lomo Saltado = $5.200 ⭐\n\n🧾 Total VIP: $9.200\n(Ahorraste $1.100 por ser frecuente 💪)\n\n📸 Mandame el comprobante y te lo preparo!', time: '20:11' },
+            { role: 'in', text: 'Buenas! Quiero pedir para esta noche 🍽️', time: '20:10' },
+            { role: 'out', text: '¡Hola! Buenas noches 😊 Bienvenido al Club de la Milanesa.\n\nEstas son nuestras estrellas de hoy:\n🥩 Milanesa Napolitana — $9.500\n🍟 Milanesa a Caballo — $10.200\n🧀 Mila Cheddar Extra — $11.800\n\n¿Con qué te vas a tentar? 😋', time: '20:10' },
+            { role: 'in', text: 'Mandame una Napo y una a caballo, porfa! 🤤', time: '20:11' },
+            { role: 'out', text: '¡Genial! 🎉 Noté que sos VIP con nosotros, así que te aplico tu descuento automático:\n\n1x Napolitana = $8.500 ⭐\n1x A Caballo = $9.200 ⭐\n\n🧾 Total con beneficio VIP: $17.700\n(Ahorraste $2.000 por ser cliente fiel 💪)\n\n📸 ¡Enviame el comprobante y el delivery sale volando!', time: '20:11' },
             { role: 'in', text: '[📸 Transferencia MercadoPago]', time: '20:12' },
-            { role: 'out', text: '✅ ¡Comprobante verificado!\n🔒 Chat guardado en archivo seguro.\n\nEn 25 min lo tenés listo. ¡Buen provecho Martín! 🇵🇪🔥', time: '20:12' },
+            { role: 'out', text: '✅ ¡Transferencia recibida al instante!\n🔒 Pedido confirmado en sistema.\n\nEn 30 min lo tenés tocando la puerta. ¡Que lo disfrutes! 🇦🇷🔥', time: '20:12' },
         ]
     },
     {
-        badge: '🇵🇪 Bodega — Perú',
-        bizName: 'Bodega Don Pepe',
-        ventas: 'S/ 1,890',
+        badge: '🇵🇪 Pollería — Perú',
+        bizName: 'Tinajas',
+        ventas: 'S/ 4,190',
         messages: [
-            { role: 'in', text: 'Casera! Me mandas arroz y aceite? 🛒', time: '11:45' },
-            { role: 'out', text: '¡Hola Señora Carmen! 😊\n\nTenemos para usted:\n🍚 Arroz Costeño 5kg — S/22.00\n🫒 Aceite Primor 1L — S/9.50\n🍚 Arroz a Granel 1kg — S/4.50\n🫒 Aceite Cil 1L — S/8.00\n\n¿Cuál prefiere?', time: '11:45' },
-            { role: 'in', text: 'El Costeño y el Primor, y mándame una gaseosa tb 🥤', time: '11:46' },
-            { role: 'out', text: '¡Listo Señora Carmen! Su pedido:\n\n1x Arroz Costeño 5kg = S/22.00\n1x Aceite Primor 1L = S/9.50\n1x Coca-Cola 1.5L = S/7.50\n\n🧾 Total: S/39.00\nComo es clienta frecuente: S/36.00 ⭐\n\n📸 Envíeme su Yape y se lo llevo a casita! 🏠', time: '11:46' },
+            { role: 'in', text: 'Hola! Quiero pedir un combo familiar 🍗', time: '19:45' },
+            { role: 'out', text: '¡Hola, buenas noches! 😊\n\nEn Tinajas tenemos los mejores combos listos:\n🍗 Combo 1 (Medio Pollo + Papas + Gaseosa) — S/45.00\n🍗 Combo Super (1 Pollo Entero + Papas F) — S/72.00\n🍗 Combo Mega (1.5 Pollos + Chicha 1.5L) — S/95.00\n\n¿Cuál te enviamos para la cena de hoy?', time: '19:45' },
+            { role: 'in', text: 'El super, por favor, con ají extra 😋', time: '19:46' },
+            { role: 'out', text: '¡Listo! Pedido anotado:\n\n1x Combo Super = S/72.00\n(Incluye ají extra de cortesía)\n\n🧾 Total: S/72.00\nComo eres de nuestros favoritos en el sistema, aplicamos tu envío gratis ⭐\n\n📸 ¡Mándame tu Yape y lo despachamos! 🔥', time: '19:46' },
         ]
     }
 ];
@@ -362,9 +362,9 @@ console.log('🚀 MAXin.ai Landing v3 loaded — Google Forms integrated');
 //   GEO PRICING — PE: USD · AR: ARS dólar blue en tiempo real
 // ══════════════════════════════════════════════════════════════
 
-const PLAN_USD = [20, 30, 50]; // Básico · Presencia · Publicidad
+const PLAN_USD = [100, 150, 250]; // Básico · Presencia · Publicidad
 
-const PLAN_PEN = [30, 50, 100]; // Básico · Presencia · Publicidad (fijo en soles)
+const PLAN_PEN = [50, 100, 300]; // Básico · Presencia · Publicidad (fijo en soles)
 
 function applyPENPricing() {
     PLAN_PEN.forEach((pen, i) => {
@@ -375,6 +375,14 @@ function applyPENPricing() {
         if (curEl)  curEl.textContent  = 'S/';
         if (amtEl)  amtEl.textContent  = pen;
         if (exchEl) exchEl.textContent = '';
+    });
+
+    // Actualizar promo inicial a Soles
+    document.querySelectorAll('.badge-promo').forEach(el => {
+        el.innerHTML = '🎁 1er mes de cortesía (S/ 15)';
+    });
+    document.querySelectorAll('.btn-promo').forEach(el => {
+        el.innerHTML = 'Probar por S/ 15';
     });
 
     const regionEl   = document.getElementById('pricingRegion');
@@ -465,16 +473,16 @@ initGeoPricing();
 // ══════════════════════════════════════════════════════════════
 
 const BRAND_WORDS = [
-    'Peru Para Ti',
-    'Spadavecha',
-    'Tu Botiquita',
-    'El Rinconcito',
-    'La Bodeguita',
-    'SaludMax',
-    'Don Pepe',
-    'Tu Tienda',
-    'La Favorita',
-    'Mi Negocio'
+    'El Tablón',
+    'Yopo',
+    'Tinajas',
+    'Club de la Milanesa',
+    'Kentucky',
+    'La Parolaccia',
+    'Kansas',
+    'La Bistecca',
+    'TGI Fridays',
+    'La Estrellita del Sur'
 ];
 
 function initBrandAnimation() {
