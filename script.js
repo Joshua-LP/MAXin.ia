@@ -541,7 +541,7 @@ function initBrandAnimation() {
         if (!slotWindow) return;
         const words = strip.querySelectorAll('.brand-slot-word');
         if (words[index]) {
-            slotWindow.style.width = words[index].getBoundingClientRect().width + 'px';
+            slotWindow.style.width = (words[index].getBoundingClientRect().width + 4) + 'px';
         }
     }
 
