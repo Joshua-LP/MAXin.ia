@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="logo.png" alt="MAXin.ai Logo" width="200"/>
+  <img src="new_logo.png" alt="MAXin.ai Logo" width="200"/>
   <h1>MAXin.ai — Tu Vendedor Virtual Inteligente</h1>
   <p>Potenciado con Inteligencia Artificial, MAXin atiende, vende y cobra por WhatsApp las 24/7 sin que tú muevas un dedo. 🚀</p>
 </div>
