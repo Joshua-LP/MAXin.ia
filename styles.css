@@ -204,18 +204,22 @@ body {
 }
 .brand-final {
     position: absolute;
-    inset: 0;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin-top: -0.5em; /* approximate centering */
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    transform-origin: left center;
     opacity: 0;
     pointer-events: none;
-    transform: scale(0.9);
-    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: scale(0.85);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .brand-final.visible { 
     opacity: 1; 
-    transform: scale(1.15); /* Efecto de crecimiento solicitado */
+    transform: scale(1.2);
 }
 .bf-bracket {
     color: var(--primary);
@@ -711,11 +715,13 @@ select.form-input { appearance: none; cursor: pointer; }
     html, body { overflow-x: hidden; width: 100%; position: relative; }
     .container { padding: 0 16px; }
     .hero { padding: 110px 0 40px; overflow-x: hidden; width: 100%; box-sizing: border-box; }
-    .hero-container { grid-template-columns: 1fr; text-align: center; gap: 30px; padding: 0 16px; width: 100%; }
-    .hero-brand { font-size: 1.6rem; justify-content: center; margin-bottom: 1.2rem; }
-    .brand-spin, .brand-final { justify-content: center; }
-    .brand-slot-window { min-width: 0; width: max-content; padding-right: 0.25em; }
-    .hero-title { font-size: 2rem; }
+    .hero-container { grid-template-columns: 1fr; text-align: center; gap: 30px; padding: 0 16px; width: 100%; box-sizing: border-box; }
+    .hero-brand { font-size: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; text-align: center; }
+    .brand-spin { display: flex; justify-content: center; align-items: center; gap: 4px; width: 100%; }
+    .brand-final { justify-content: center; transform-origin: center center; margin-top: -0.6em; }
+    .brand-slot-window { min-width: 0; width: auto; padding: 0 4px; }
+    .brand-final.visible { transform: scale(1.4); } 
+    .hero-title { font-size: 1.9rem; margin-bottom: 12px; }
     .hero-subtitle { font-size: 0.95rem; }
     .hero-badge { font-size: 0.8rem; padding: 10px 14px; white-space: normal; height: auto; text-align: left; }
     .hero-cta { justify-content: center; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
